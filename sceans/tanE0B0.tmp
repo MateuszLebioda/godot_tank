@@ -46,9 +46,8 @@ _data = {
 "RESET": SubResource("Animation_0uhvq")
 }
 
-[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
+[node name="Tank" type="CharacterBody2D"]
 script = ExtResource("1_ilar2")
-weapon = NodePath("CollisionShape2D/Wepon")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
 position = Vector2(70, -5)

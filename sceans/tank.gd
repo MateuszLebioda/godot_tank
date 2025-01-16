@@ -6,7 +6,7 @@ const TURN_SPEED = 2
 const ROTATE_SPEED = 20
 
 # Reference to another object, which we can define in Inspector section
-@export var weapon: Node2D;
+@export var weapon: Weapon
 
 # References to our nodes
 #
@@ -29,12 +29,22 @@ func _physics_process(delta: float):
 		# Move forward
 		animation.play("Move")
 		velocity = lerp(velocity, (direction.normalized() * input_direction.y) * SPEED, SPEED * delta)
+		move_and_slide();
 	else:
 		# Stop moving
 		animation.play("RESET")
-		velocity = Vector2.ZERO
+
+	
+	var wepon_direction := Input.get_axis("rotate_wepon_left", "rotate_wepon_right");
+	weapon.make_rotation(wepon_direction, delta)
+	
+	var fire_input := Input.is_action_pressed("wepon_fire")
+	if(fire_input):
+		weapon.fire()
 	
 	#Apply velocity to move
-	move_and_slide();
+	
+
+
 func _input(event: InputEvent):
 	pass
