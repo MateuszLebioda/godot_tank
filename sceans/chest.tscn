@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://g4q46ackutpg"]
+
+[ext_resource type="Script" path="res://sceans/chest.gd" id="1_hq71n"]
+[ext_resource type="Texture2D" uid="uid://b3mh80bxcjigc" path="res://assets/sprites/chest.png" id="2_r1da0"]
+[ext_resource type="PackedScene" uid="uid://cojy4tr67u00i" path="res://sceans/boom.tscn" id="3_udomk"]
+[ext_resource type="PackedScene" uid="uid://btxln78gwgq4u" path="res://sceans/point.tscn" id="3_xevh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phn0a"]
+size = Vector2(16, 11)
+
+[node name="Chest" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 29
+linear_velocity = Vector2(1, 1)
+linear_damp = 100.0
+angular_damp = 100.0
+script = ExtResource("1_hq71n")
+boom = ExtResource("3_udomk")
+point = ExtResource("3_xevh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r1da0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_phn0a")

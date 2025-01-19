@@ -53,6 +53,19 @@ wepon_fire={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Collectable"
+2d_physics/layer_3="Wals"
+2d_physics/layer_4="Destructables"
+2d_physics/layer_5="Wepons"
+2d_physics/layer_6="Enemy"
+
+[physics]
+
+2d/default_gravity_vector=Vector2(0, 0)
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

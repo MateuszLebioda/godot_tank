@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Tank
 
 # Const variables
 const SPEED = 64.0
@@ -44,7 +45,3 @@ func _physics_process(delta: float):
 	
 	#Apply velocity to move
 	
-
-
-func _input(event: InputEvent):
-	pass

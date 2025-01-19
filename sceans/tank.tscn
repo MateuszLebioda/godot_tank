@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://da28ap3tj8duv" path="res://sceans/wepon.tscn" id="2_md3td"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rile6"]
-size = Vector2(28, 26)
+size = Vector2(32, 30)
 
 [sub_resource type="Animation" id="Animation_oag5p"]
 resource_name = "Move"
@@ -47,8 +47,12 @@ _data = {
 }
 
 [node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("weapon")]
+collision_mask = 4
 script = ExtResource("1_ilar2")
-weapon = NodePath("CollisionShape2D/Wepon")
+weapon = NodePath("Wepon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rile6")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
 position = Vector2(70, -5)
@@ -56,12 +60,9 @@ texture = ExtResource("1_vliu6")
 offset = Vector2(-70, 5)
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rile6")
-
-[node name="Wepon" parent="CollisionShape2D" instance=ExtResource("2_md3td")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_q3y65")
 }
+
+[node name="Wepon" parent="." instance=ExtResource("2_md3td")]

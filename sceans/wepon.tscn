@@ -16,4 +16,3 @@ offset = Vector2(-28, 21)
 [node name="Reload" type="Timer" parent="."]
 
 [connection signal="timeout" from="Reload" to="." method="_on_reload_timeout"]
-[connection signal="timeout" from="Reload" to="." method="_on_reload_timeout1"]
