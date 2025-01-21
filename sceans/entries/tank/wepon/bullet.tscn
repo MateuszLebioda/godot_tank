@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dumqaqosmk6by"]
 
-[ext_resource type="Script" path="res://sceans/bullet.gd" id="1_n5lkc"]
+[ext_resource type="Script" path="res://sceans/entries/tank/wepon/bullet.gd" id="1_n5lkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_282jw"]
 size = Vector2(3, 3)

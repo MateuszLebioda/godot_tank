@@ -1,6 +1,10 @@
 extends CharacterBody2D
 class_name Tank
 
+signal point_collacted(collectable)
+signal reloaded()
+signal reload_progress(progress)
+
 # Const variables
 const SPEED = 64.0
 const TURN_SPEED = 2
@@ -18,6 +22,11 @@ const ROTATE_SPEED = 20
 @onready var animation := $AnimationPlayer
 
 var direction := Vector2.RIGHT
+
+func _ready() -> void:
+	weapon.reloaded.connect(func (): reloaded.emit())
+	weapon.reload_progress.connect(func (progress):reload_progress.emit(progress))
+
 
 func _physics_process(delta: float): 
 	var input_direction := Input.get_vector("turn_left", "turn_right", "move_backward", "move_forward")
@@ -44,4 +53,6 @@ func _physics_process(delta: float):
 		weapon.fire()
 	
 	#Apply velocity to move
-	
+
+func collect(collactable):
+	point_collacted.emit(collactable)

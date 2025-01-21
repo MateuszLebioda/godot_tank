@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cojy4tr67u00i"]
 
 [ext_resource type="Texture2D" uid="uid://mtrttg8ag32i" path="res://assets/sprites/boom.png" id="1_bo2yq"]
-[ext_resource type="Script" path="res://sceans/boom.gd" id="1_rsu5e"]
+[ext_resource type="Script" path="res://sceans/entries/animation/boom.gd" id="1_rsu5e"]
 
 [sub_resource type="Animation" id="Animation_0hw4x"]
 resource_name = "Boom"

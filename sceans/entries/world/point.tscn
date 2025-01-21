@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://btxln78gwgq4u"]
 
 [ext_resource type="Texture2D" uid="uid://c6ykfvjhxc7op" path="res://assets/sprites/point.png" id="1_o20kj"]
-[ext_resource type="Script" path="res://sceans/point.gd" id="1_uvyox"]
+[ext_resource type="Script" path="res://sceans/entries/world/point.gd" id="1_uvyox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0eoja"]
 radius = 6.0

@@ -11,6 +11,15 @@ var state = STATES.READY
 @export var BULLET_SCENE: PackedScene
 
 @onready var reload: Timer = $Reload
+
+signal reloaded()
+signal reload_progress(progress)
+
+func _process(delta):
+	if !reload.is_stopped():
+		var progress = 1 - (reload.time_left / reload.wait_time)
+		reload_progress.emit(progress)
+
 	
 func make_rotation(input: float, delta: float):
 	direction = direction.rotated(input * (PI / 2) * TURN_SPEED * delta)
@@ -36,3 +45,4 @@ func fire():
 
 func _on_reload_timeout() -> void:
 	_changeState(STATES.READY)
+	reloaded.emit()

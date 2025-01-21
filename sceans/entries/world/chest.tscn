@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://g4q46ackutpg"]
 
-[ext_resource type="Script" path="res://sceans/chest.gd" id="1_hq71n"]
+[ext_resource type="Script" path="res://sceans/entries/world/chest.gd" id="1_hq71n"]
 [ext_resource type="Texture2D" uid="uid://b3mh80bxcjigc" path="res://assets/sprites/chest.png" id="2_r1da0"]
-[ext_resource type="PackedScene" uid="uid://cojy4tr67u00i" path="res://sceans/boom.tscn" id="3_udomk"]
-[ext_resource type="PackedScene" uid="uid://btxln78gwgq4u" path="res://sceans/point.tscn" id="3_xevh1"]
+[ext_resource type="PackedScene" uid="uid://cojy4tr67u00i" path="res://sceans/entries/animation/boom.tscn" id="3_udomk"]
+[ext_resource type="PackedScene" uid="uid://btxln78gwgq4u" path="res://sceans/entries/world/point.tscn" id="3_xevh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phn0a"]
 size = Vector2(16, 11)
