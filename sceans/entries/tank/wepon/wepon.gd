@@ -11,6 +11,7 @@ var state = STATES.READY
 @export var BULLET_SCENE: PackedScene
 
 @onready var reload: Timer = $Reload
+@onready var fire_soud: AudioStreamPlayer = $fire
 
 signal reloaded()
 signal reload_progress(progress)
@@ -37,6 +38,7 @@ func fire():
 	var bullety = BULLET_SCENE.instantiate()
 	bullety.direction = Vector2.from_angle(global_rotation);
 	bullety.position = global_position
+	fire_soud.play()
 	get_tree().root.add_child(bullety)
 	
 	_changeState(STATES.RELOAD)

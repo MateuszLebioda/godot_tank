@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhpy7nym8h68x"]
+[gd_scene load_steps=6 format=3 uid="uid://dhpy7nym8h68x"]
 
 [ext_resource type="Script" path="res://sceans/game.gd" id="1_8g2kw"]
 [ext_resource type="PackedScene" uid="uid://cx25pi8fhif57" path="res://sceans/entries/world/world.tscn" id="1_n6ty7"]
 [ext_resource type="PackedScene" uid="uid://dpge8evwomoea" path="res://sceans/entries/tank/tank.tscn" id="2_mgbkd"]
 [ext_resource type="PackedScene" uid="uid://dmhkfrc3ph6s8" path="res://sceans/ui/ui.tscn" id="4_gpknh"]
+[ext_resource type="AudioStream" uid="uid://j3tf48xefg0l" path="res://assets/audio/music/background-music.mp3" id="5_4sxyc"]
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("tank", "ui")]
 script = ExtResource("1_8g2kw")
@@ -16,3 +17,9 @@ ui = NodePath("Ui")
 position = Vector2(596, 304)
 
 [node name="Ui" parent="." instance=ExtResource("4_gpknh")]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4sxyc")
+volume_db = -30.0
+autoplay = true
+bus = &"Music"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cojy4tr67u00i"]
+[gd_scene load_steps=7 format=3 uid="uid://cojy4tr67u00i"]
 
 [ext_resource type="Texture2D" uid="uid://mtrttg8ag32i" path="res://assets/sprites/boom.png" id="1_bo2yq"]
 [ext_resource type="Script" path="res://sceans/entries/animation/boom.gd" id="1_rsu5e"]
+[ext_resource type="AudioStream" uid="uid://bmfo5v0ef3s7x" path="res://assets/audio/efect/boom.wav" id="3_w45ri"]
 
 [sub_resource type="Animation" id="Animation_0hw4x"]
 resource_name = "Boom"
@@ -54,6 +55,10 @@ hframes = 7
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="boom_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w45ri")
+bus = &"SFX"
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="ready" from="." to="." method="_on_ready"]

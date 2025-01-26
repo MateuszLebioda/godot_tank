@@ -20,6 +20,7 @@ const ROTATE_SPEED = 20
 @onready var sprite := $BodySprite
 @onready var collistion := $CollisionShape2D
 @onready var animation := $AnimationPlayer
+@onready var collect_audio: AudioStreamPlayer = $collect_audio
 
 var direction := Vector2.RIGHT
 
@@ -55,4 +56,5 @@ func _physics_process(delta: float):
 	#Apply velocity to move
 
 func collect(collactable):
+	collect_audio.play()
 	point_collacted.emit(collactable)

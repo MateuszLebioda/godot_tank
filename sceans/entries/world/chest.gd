@@ -4,6 +4,8 @@ class_name Chest
 @export var boom: PackedScene
 @export var point: PackedScene
 
+@onready var boom_soud: AudioStreamPlayer = $boom
+
 func destroy():
 	_sprawn_point()
 	_destroy_animation()
